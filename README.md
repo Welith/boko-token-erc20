@@ -1,66 +1,34 @@
-## Foundry
+# Boko Token ERC20
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This is my first draft of creating an ERC20 token. It does not have any additional logic. It is merely the beginning.
 
-Foundry consists of:
+## How to build
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+1. As all other repos in my profile, you will need to:
 
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```bash
+git clone https://github.com/Welith/boko-token-erc20
+cd boko-token-erc20
 ```
 
-### Test
+2. I have create a `Makefile` for your convinience, which will help you deploy. The first thing we want to do is build the app:
 
-```shell
-$ forge test
+```bash
+make build
 ```
 
-### Format
+3. Then, you have two choices, deploy on a local testnet (with anvil):
 
-```shell
-$ forge fmt
+```bash
+make anvil
+
+Open a new terminal
+
+make deploy
 ```
 
-### Gas Snapshots
+4. If you want you can deploy to Sepolia as well. However, for this you will need to create a foundry account + a Sepolia testing account in your Metamask
 
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+```bash
+ make deploy ARGS="--network sepolia"
+ ```
